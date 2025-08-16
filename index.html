@@ -107,7 +107,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
 <link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://wpriverthemes.com/jayden/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwpriverthemes.com%2Fjayden%2Fhome-version-two-v6%2F&amp;format=xml">
 <meta name="generator" content="Redux 4.5.7">                <style>
                     :root {
-                        --primary: #F3500F;
+                        --primary: #FB8F10;
                     }
                 </style>
                 <meta name="generator" content="Elementor 3.30.4; features: e_font_icon_svg, additional_custom_breakpoints, e_element_cache; settings: css_print_method-external, google_font-enabled, font_display-swap">
@@ -263,7 +263,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
                 <div class="wrap-section text-center">
 
                     <!-- Main Headline -->
-                    <h1 class="text-display-2 fw-medium">
+                    <h1 id="animated-headline" class="text-display-2 fw-medium">
                         Turning Conversations Into Cashflow
                     </h1>
 
@@ -300,13 +300,13 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/16
         text-decoration: none;
     }
     .tf-button-primary {
-        background-color: var(--primary, #F3500F); /* Uses your site's primary color */
+        background-color: var(--primary, #FB8F10); /* Uses your site's primary color */
         color: #fff;
-        border: 2px solid var(--primary, #F3500F);
+        border: 2px solid var(--primary, #FB8F10);
     }
     .tf-button-primary:hover {
         background-color: transparent;
-        color: var(--primary, #F3500F);
+        color: var(--primary, #FB8F10);
     }
 </style>
         <!-- /section-banner -->
@@ -801,7 +801,8 @@ That’s the mindset I built ClosedBy on, a team of closers who take full owners
         font-weight: 500;
     }
     .clean-form-group input,
-    .clean-form-group textarea {
+    .clean-form-group textarea,
+    .clean-form-group select {
         width: 100%;
         padding: 12px;
         background-color: transparent;
@@ -814,6 +815,22 @@ That’s the mindset I built ClosedBy on, a team of closers who take full owners
     .clean-form-group textarea::placeholder {
         color: #888;
     }
+	.clean-form-group select option {
+		background: #000;
+	}
+	.checkbox-group label {
+		font-size: 16px;
+		font-weight: 400;
+	}
+	.checkbox-item {
+		display: flex;
+		align-items: center;
+		margin-bottom: 10px;
+	}
+	.checkbox-item input {
+		margin-right: 10px;
+		width: auto;
+	}
     .clean-submit-btn {
         width: 100%;
         padding: 15px;
@@ -822,30 +839,111 @@ That’s the mindset I built ClosedBy on, a team of closers who take full owners
         transition: all 0.3s ease;
         text-decoration: none;
         cursor: pointer;
-        background-color: #F3500F; /* Your site's primary color */
+        background-color: #FB8F10; /* Your site's primary color */
         color: #fff;
-        border: 2px solid #F3500F;
+        border: 2px solid #FB8F10;
         font-size: 16px;
     }
     .clean-submit-btn:hover {
         background-color: transparent;
-        color: #F3500F;
+        color: #FB8F10;
     }
 </style>
 
 <form action="https://formspree.io/f/mjkolwjo" method="POST" class="clean-form-contact">
 
     <div class="clean-form-group">
-        <label for="email">Your Email</label>
+        <label for="full-name">Full Name (Required)</label>
+        <input id="full-name" type="text" name="fullName" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="clean-form-group">
+        <label for="email">Email Address (Required)</label>
         <input id="email" type="email" name="email" placeholder="Enter your email address" required>
     </div>
 
     <div class="clean-form-group">
-        <label for="message">Your Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Tell us how we can help" required></textarea>
+        <label for="phone">WhatsApp / Phone Number (Optional but recommended)</label>
+        <input id="phone" type="tel" name="phone" placeholder="Enter your WhatsApp or phone number">
     </div>
 
-    <!-- Add any other fields from your full form here using the same structure -->
+    <div class="clean-form-group">
+        <label for="business-offer">What’s your business / offer? (Short Answer — be specific)</label>
+        <textarea id="business-offer" name="businessOffer" rows="3" placeholder="Describe your business or offer" required></textarea>
+    </div>
+
+    <div class="clean-form-group">
+        <label for="deal-size">What’s your average deal size?</label>
+        <select id="deal-size" name="dealSize" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="1000-5000">€1,000 – €5,000</option>
+            <option value="5000-10000">€5,000 – €10,000</option>
+            <option value="10000+">€10,000+</option>
+        </select>
+    </div>
+
+    <div class="clean-form-group">
+        <label for="lead-flow">Do you currently have leads coming in consistently?</label>
+        <select id="lead-flow" name="leadFlow" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="yes">Yes, steady flow of qualified leads every week</option>
+            <option value="somewhat">Somewhat, we get leads but not consistently or not always qualified</option>
+            <option value="no">No, we currently don’t have leads coming in</option>
+        </select>
+    </div>
+
+    <div class="clean-form-group">
+        <label>How are you currently generating leads? (Select all that apply)</label>
+        <div class="checkbox-group">
+            <div class="checkbox-item">
+                <input type="checkbox" id="paid-ads" name="lead-generation" value="Paid ads">
+                <label for="paid-ads">Paid ads</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="organic-content" name="lead-generation" value="Organic content">
+                <label for="organic-content">Organic content</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="referrals" name="lead-generation" value="Referrals">
+                <label for="referrals">Referrals</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="cold-outreach" name="lead-generation" value="Cold outreach">
+                <label for="cold-outreach">Cold outreach</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="other-lead-gen" name="lead-generation" value="Other">
+                <label for="other-lead-gen">Other (please specify)</label>
+            </div>
+            <input type="text" id="other-specify" name="other-lead-generation" placeholder="Please specify">
+        </div>
+    </div>
+
+    <div class="clean-form-group">
+        <label for="sales-team-experience">Have you worked with a sales team or closer before? If yes, how was your experience?</label>
+        <select id="sales-team-experience" name="salesTeamExperience" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="great">Yes, great results</option>
+            <option value="below-expectations">Yes, results were below expectations</option>
+            <option value="never">No, never worked with a sales team/closer before</option>
+        </select>
+		<textarea name="salesTeamExperienceDescription" rows="3" placeholder="Please describe your experience" style="margin-top: 10px;"></textarea>
+    </div>
+
+    <div class="clean-form-group">
+        <label for="main-outcome">What’s the main outcome you want from working with us? (Short Answer)</label>
+        <textarea id="main-outcome" name="mainOutcome" rows="3" placeholder="Describe your desired outcome" required></textarea>
+    </div>
+
+    <div class="clean-form-group">
+        <label for="start-timeframe">If we work together, how soon are you ready to start?</label>
+        <select id="start-timeframe" name="startTimeframe" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="immediately">Immediately</option>
+            <option value="within-30-days">Within 30 days</option>
+            <option value="not-sure">Not sure yet</option>
+        </select>
+    </div>
 
     <div class="clean-form-group">
         <button type="submit" class="clean-submit-btn">Send Message</button>
@@ -993,6 +1091,35 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <script src="https://wpriverthemes.com/jayden/wp-content/themes/jayden/js/lightbox.min.js" id="lightbox-js"></script>
 <script src="https://wpriverthemes.com/jayden/wp-content/themes/jayden/js/main.js" id="jayden-main-js"></script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Register the GSAP plugins
+    gsap.registerPlugin(SplitText, ScrollTrigger);
+
+    // Target the headline
+    let mySplitText = new SplitText("#animated-headline", { type: "words,chars" });
+    let chars = mySplitText.chars; // An array of all the characters
+
+    gsap.set("#animated-headline", { perspective: 400 });
+
+    // Set up the animation
+    gsap.from(chars, {
+        duration: 0.8,
+        opacity: 0,
+        y: 60,
+        rotationX: -90,
+        transformOrigin: "0% 50% -50",
+        ease: "back.out",
+        stagger: 0.05,
+        // Trigger the animation when the hero section is in view
+        scrollTrigger: {
+            trigger: "#home", // The ID of your hero section
+            start: "top 80%", // Starts the animation when the top of the section is 80% from the top of the viewport
+            toggleActions: "play none none none"
+        }
+    });
+});
+</script>
 
 
 </body></html>

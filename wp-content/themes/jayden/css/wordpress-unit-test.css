@@ -3203,7 +3203,7 @@ pre {
 
 
 .widget_calendar .calendar_wrap caption{
-	color: #F3500F;
+	color: #FB8F10;
 }
 
 .wp-block-group__inner-container .wp-block-latest-comments li, .blog-area .sidebar .sidebar-item.widget_recent_comments li{
@@ -3218,7 +3218,7 @@ pre {
 }
 
 .wp-calendar-table tbody td#today{
-	color: #F3500F !important;
+	color: #FB8F10 !important;
 }
 
 .widget_archive li,
@@ -3243,26 +3243,26 @@ pre {
 
 
 .blog-area .sidebar .sidebar-item a:hover {
-	color: #F3500F !important;
+	color: #FB8F10 !important;
 }
 
 .widget_search button[type="submit"]{
-	background: #F3500F;
+	background: #FB8F10;
     color: #fff;
     min-height: 50px;
    
 }
 
 .widget_rss .rss-date{
-	color: #F3500F;
+	color: #FB8F10;
 }
 
 .widget_rss cite{
-	color: #F3500F;
+	color: #FB8F10;
 }
 
 .widget_rss .rssSummary{
-	color: #F3500F;
+	color: #FB8F10;
 }
 
 .main-sidebar .single-sidebar-widget .tagcloud a:hover{
